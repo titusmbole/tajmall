@@ -15,7 +15,7 @@ const Properties: React.FC<PropertiesProps> = ({ onPageChange }) => {
       id: 1,
       title: 'Oceanview Penthouse',
       location: 'Malibu, CA',
-      price: '$12,500,000',
+      price: 'Ksh 12,500,000',
       type: 'Penthouse',
       image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
       bedrooms: 4,
@@ -27,7 +27,7 @@ const Properties: React.FC<PropertiesProps> = ({ onPageChange }) => {
       id: 2,
       title: 'Modern Villa Estate',
       location: 'Beverly Hills, CA',
-      price: '$8,750,000',
+      price: 'Ksh 8,750,000',
       type: 'Villa',
       image: 'https://images.pexels.com/photos/1642125/pexels-photo-1642125.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
       bedrooms: 6,
@@ -39,7 +39,7 @@ const Properties: React.FC<PropertiesProps> = ({ onPageChange }) => {
       id: 3,
       title: 'Luxury Townhouse',
       location: 'Manhattan, NY',
-      price: '$5,200,000',
+      price: 'Ksh 5,200,000',
       type: 'Townhouse',
       image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
       bedrooms: 3,
@@ -51,7 +51,7 @@ const Properties: React.FC<PropertiesProps> = ({ onPageChange }) => {
       id: 4,
       title: 'Skyline Apartment',
       location: 'Chicago, IL',
-      price: '$3,800,000',
+      price: 'Ksh 3,800,000',
       type: 'Apartment',
       image: 'https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
       bedrooms: 3,
@@ -63,7 +63,7 @@ const Properties: React.FC<PropertiesProps> = ({ onPageChange }) => {
       id: 5,
       title: 'Waterfront Mansion',
       location: 'Miami, FL',
-      price: '$15,200,000',
+      price: 'Ksh 15,200,000',
       type: 'Mansion',
       image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
       bedrooms: 8,
@@ -75,7 +75,7 @@ const Properties: React.FC<PropertiesProps> = ({ onPageChange }) => {
       id: 6,
       title: 'Mountain Retreat',
       location: 'Aspen, CO',
-      price: '$6,900,000',
+      price: 'Ksh 6,900,000',
       type: 'Chalet',
       image: 'https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
       bedrooms: 5,
@@ -92,7 +92,7 @@ const Properties: React.FC<PropertiesProps> = ({ onPageChange }) => {
     
     let matchesPrice = true;
     if (priceRange !== 'all') {
-      const price = parseInt(property.price.replace(/[$,]/g, ''));
+      const price = parseInt(property.price.replace(/[$ ,]/g, ''));
       switch (priceRange) {
         case 'under5m':
           matchesPrice = price < 5000000;

@@ -11,7 +11,7 @@ const LaunchingSoon: React.FC = () => {
       title: 'Celestial Heights',
       location: 'Beverly Hills, CA',
       launchDate: 'Q2 2025',
-      priceRange: '$3.5M - $8.2M',
+      priceRange: 'Ksh 3.5M - Ksh 8.2M',
       type: 'Luxury Condominiums',
       image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
       features: ['Rooftop Pool', 'Concierge Service', 'Smart Home Technology', 'Panoramic Views'],
@@ -23,7 +23,7 @@ const LaunchingSoon: React.FC = () => {
       title: 'Oceanside Sanctuary',
       location: 'Malibu, CA',
       launchDate: 'Q3 2025',
-      priceRange: '$12M - $25M',
+      priceRange: 'Ksh 12M - Ksh 25M',
       type: 'Beachfront Villas',
       image: 'https://images.pexels.com/photos/1642125/pexels-photo-1642125.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
       features: ['Private Beach Access', 'Infinity Pool', 'Wine Cellar', 'Guest House'],
@@ -35,7 +35,7 @@ const LaunchingSoon: React.FC = () => {
       title: 'Urban Pinnacle',
       location: 'Manhattan, NY',
       launchDate: 'Q4 2025',
-      priceRange: '$2.8M - $15M',
+      priceRange: 'Ksh 2.8M - Ksh 15M',
       type: 'High-Rise Residences',
       image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
       features: ['Sky Lounge', 'Fitness Center', 'Valet Parking', 'Business Center'],
@@ -47,7 +47,7 @@ const LaunchingSoon: React.FC = () => {
       title: 'Mountain Serenity',
       location: 'Aspen, CO',
       launchDate: 'Q1 2026',
-      priceRange: '$4.5M - $12M',
+      priceRange: 'Ksh 4.5M - Ksh 12M',
       type: 'Alpine Chalets',
       image: 'https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1',
       features: ['Ski-in/Ski-out', 'Hot Tub', 'Fireplace', 'Mountain Views'],
@@ -104,7 +104,7 @@ const LaunchingSoon: React.FC = () => {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute top-6 left-6">
-                      <span className={`px-4 py-2 rounded-full text-sm font-semibold ${getStatusColor(project.status)}`}>
+                      <span className={`px-4 py-2 rounded-full text-sm font-semibold Ksh {getStatusColor(project.status)}`}>
                         {project.status}
                       </span>
                     </div>
