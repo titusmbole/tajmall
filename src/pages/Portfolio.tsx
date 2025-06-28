@@ -172,10 +172,10 @@ const Portfolio: React.FC = () => {
               <div className="text-4xl font-bold text-yellow-600 mb-2">50+</div>
               <div className="text-gray-600">Completed Projects</div>
             </div>
-            <div>
+            {/* <div>
               <div className="text-4xl font-bold text-yellow-600 mb-2">12</div>
               <div className="text-gray-600">Countries</div>
-            </div>
+            </div> */}
             <div>
               <div className="text-4xl font-bold text-yellow-600 mb-2">25+</div>
               <div className="text-gray-600">Industry Awards</div>
