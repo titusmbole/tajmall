@@ -153,7 +153,6 @@ const Properties: React.FC<PropertiesProps> = ({ onPageChange }) => {
               <option value="townhouse">Townhouse</option>
               <option value="apartment">Apartment</option>
               <option value="mansion">Mansion</option>
-              <option value="chalet">Chalet</option>
             </select>
 
             {/* Price Filter */}

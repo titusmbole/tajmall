@@ -1,6 +1,8 @@
 import React from 'react';
 import { ChevronRight, Star, Users, Building, Award, ArrowRight, MapPin, Calendar, TrendingUp, Shield, Phone, Mail, Play, CheckCircle } from 'lucide-react';
 
+import BG from "../assets/image.jpeg"
+
 interface HomeProps {
   onPageChange: (page: string) => void;
 }
@@ -138,7 +140,7 @@ const Home: React.FC<HomeProps> = ({ onPageChange }) => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1)'
+            backgroundImage: `url(${BG})`
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>

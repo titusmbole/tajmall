@@ -127,8 +127,8 @@ const Portfolio: React.FC = () => {
     { id: 'High-Rise', label: 'High-Rise' },
     { id: 'Villas', label: 'Villas' },
     { id: 'Apartments', label: 'Apartments' },
-    { id: 'Resort', label: 'Resort' },
-    { id: 'Beachfront', label: 'Beachfront' },
+    // { id: 'Resort', label: 'Resort' },
+    // { id: 'Beachfront', label: 'Beachfront' },
     { id: 'Townhomes', label: 'Townhomes' }
   ];
 

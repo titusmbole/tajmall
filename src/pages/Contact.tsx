@@ -64,7 +64,7 @@ const Contact: React.FC<ContactProps> = ({ initialMessage = '', onMessageClear }
     {
       icon: MapPin,
       title: 'Office',
-      details: ['Nairobi, Kenya', 'East Africa'],
+      details: ['Taj Tower, Nairobi', 'Kenya'],
       description: 'Visit by Appointment'
     }
   ];
@@ -72,7 +72,7 @@ const Contact: React.FC<ContactProps> = ({ initialMessage = '', onMessageClear }
   const offices = [
     {
       city: 'Nairobi',
-      address: 'Nairobi, Kenya',
+      address: 'Taj Tower, Nairobi Kenya',
       phone: '0725825000',
       email: 'info.tajmallltd@gmail.com'
     }
@@ -209,7 +209,7 @@ const Contact: React.FC<ContactProps> = ({ initialMessage = '', onMessageClear }
             </div>
 
             {/* Contact Information */}
-            <div className="space-y-8">
+            {/* <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
                 <div className="space-y-6">
@@ -224,6 +224,98 @@ const Contact: React.FC<ContactProps> = ({ initialMessage = '', onMessageClear }
                           <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
                           {info.details.map((detail, detailIndex) => (
                             <p key={detailIndex} className="text-gray-600">{detail}</p>
+                          ))}
+                          <p className="text-sm text-gray-500 mt-1">{info.description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="bg-gray-50 rounded-2xl p-6">
+                <div className="flex items-center mb-4">
+                  <Clock className="h-6 w-6 text-orange-500 mr-3" />
+                  <h4 className="font-semibold text-gray-900">Business Hours</h4>
+                </div>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Monday - Friday:</span>
+                    <span className="text-gray-900">9:00 AM - 6:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Saturday:</span>
+                    <span className="text-gray-900">10:00 AM - 4:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Sunday:</span>
+                    <span className="text-gray-900">By Appointment</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-4">Follow Us</h4>
+                <div className="flex space-x-4">
+                  <a href="#" className="bg-gray-100 hover:bg-orange-100 p-3 rounded-lg transition-colors">
+                    <Instagram className="h-6 w-6 text-gray-600 hover:text-orange-500" />
+                  </a>
+                  <a href="#" className="bg-gray-100 hover:bg-orange-100 p-3 rounded-lg transition-colors">
+                    <Facebook className="h-6 w-6 text-gray-600 hover:text-orange-500" />
+                  </a>
+                  <a href="#" className="bg-gray-100 hover:bg-orange-100 p-3 rounded-lg transition-colors">
+                    <Youtube className="h-6 w-6 text-gray-600 hover:text-orange-500" />
+                  </a>
+                  <a href="#" className="bg-gray-100 hover:bg-orange-100 p-3 rounded-lg transition-colors">
+                    <Linkedin className="h-6 w-6 text-gray-600 hover:text-orange-500" />
+                  </a>
+                </div>
+              </div>
+            </div> */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+                <div className="space-y-6">
+                  {contactInfo.map((info, index) => {
+                    const Icon = info.icon;
+                    
+                    // Helper function to handle clicks based on contact type
+                    const handleContactClick = (info, detail) => {
+                      if (info.title.toLowerCase().includes('phone') || info.title.toLowerCase().includes('call')) {
+                        // Remove any non-numeric characters except + for international numbers
+                        const phoneNumber = detail.replace(/[^\d+]/g, '');
+                        window.open(`tel:${phoneNumber}`, '_self');
+                      } else if (info.title.toLowerCase().includes('email')) {
+                        window.open(`mailto:${detail}`, '_self');
+                      } else if (info.title.toLowerCase().includes('address') || info.title.toLowerCase().includes('location')) {
+                        // Encode the address for Google Maps
+                        const encodedAddress = encodeURIComponent(detail);
+                        window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+                      }
+                    };
+
+                    return (
+                      <div key={index} className="flex items-start">
+                        <div className="bg-orange-100 p-3 rounded-lg mr-4">
+                          <Icon className="h-6 w-6 text-orange-500" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
+                          {info.details.map((detail, detailIndex) => (
+                            <p 
+                              key={detailIndex} 
+                              className="text-gray-600 hover:text-orange-500 cursor-pointer transition-colors duration-200"
+                              onClick={() => handleContactClick(info, detail)}
+                              title={`Click to ${
+                                info.title.toLowerCase().includes('phone') || info.title.toLowerCase().includes('call') 
+                                  ? 'call' 
+                                  : info.title.toLowerCase().includes('email') 
+                                    ? 'send email' 
+                                    : 'view on map'
+                              }`}
+                            >
+                              {detail}
+                            </p>
                           ))}
                           <p className="text-sm text-gray-500 mt-1">{info.description}</p>
                         </div>
@@ -324,7 +416,7 @@ const Contact: React.FC<ContactProps> = ({ initialMessage = '', onMessageClear }
           
           <div className="rounded-3xl overflow-hidden shadow-xl">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8197896514!2d36.8219462!3d-1.2920659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d22c5c5c5d%3A0x5c5c5c5c5c5c5c5c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+              src="https://maps.app.goo.gl/sJTkxgLsvgHE91D16"
               width="100%"
               height="400"
               style={{ border: 0 }}
